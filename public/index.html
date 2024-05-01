@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OAuth 2.0 Test</title>
+  </head>
+  <body>
+    <h1>OAuth 2.0 with JWT Test</h1>
+
+    <!-- Login Button -->
+    <a href="/auth/google">Login with Google</a>
+
+    <!-- Display Area for JWT Token -->
+    <div id="tokenDisplay">
+      <h2>Received Token:</h2>
+      <pre id="tokenArea"></pre>
+    </div>
+
+    <script>
+      // Check if there's a token in the URL (this won't work with the current JWT setup, but might be useful in future adjustments)
+      const urlParams = new URLSearchParams(window.location.search);
+      const token = urlParams.get('token');
+
+      if (token) {
+          document.getElementById('tokenArea').innerText = token;
+      }
+    </script>
+  </body>
+</html>
